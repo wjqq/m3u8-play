@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+
+  <!--
+    
+	1 - start from mp4
+	2 - convert mp4 to mpeg with ffmpeg https://cloud.tencent.com/developer/article/1759420?from=information.detail.%E5%9C%A8%E7%BA%BFm3u8
+	3 - https://github.com/videojs/http-streaming(with videojs)
+    4 - put all the code in the http root server.
+   -->
+</head>
+<body>
+<video-js id="vid1" class="vjs-default-skin" controls>
+  <source
+     src="http://localhost/example/test.m3u8"
+     type="application/x-mpegURL">
+</video-js>
+<script src="video.min.js"></script>
+<script src="videojs-http-streaming.js"></script>
+<script>
+var player = videojs('vid1');
+player.play();
+</script>
+</body>
+</html>
